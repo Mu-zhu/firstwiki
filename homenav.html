@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>igem nefu</title>
+	<link rel="stylesheet" href="homenav.css">
+	<style>
+		ul{
+			list-style: none;
+
+		}
+		/*圣杯模式*/
+		.HolyGrail {
+		  display: flex;
+		  /*min-height: 100vh;*/
+		  height: 100px;
+		  background-color: #FAEBD7; 
+		  opacity:1;
+		  /*flex-direction: column;*/
+		}
+
+		header,
+		footer {
+		  flex: 1;
+		}
+
+		.HolyGrail-body {
+		  display: flex;
+		  flex: 1;
+		}
+
+		.HolyGrail-content {
+		  flex: 1;
+		}
+
+		.HolyGrail-nav, .HolyGrail-ads {
+		  /* 两个边栏的宽度设为12em */
+		  flex: 0 0 12em;
+		}
+
+		.HolyGrail-nav {
+		  /* 导航放到最左边 */
+		  order: -1;
+		  align-content: space-between;
+		  flex-wrap: nowrap;
+		}
+		.HolyGrail-nav .item{
+			/*width: 20px;*/
+			display: flex;
+			background-color: #00FFFF;
+
+		}
+		.HolyGrail-nav .item1{
+			background-color: #424242;
+		}
+
+		/*这里要尝试网状分布*/
+		.Grid {
+			  display: flex;
+			  flex-wrap: nowrap;
+			}
+
+			.Grid-cell {
+			  flex: 1;
+			}
+			.Grid-cell .item{
+			float: left;
+			background-color: #00FFFF;
+			padding: 20px;
+			margin: 10px;
+			}
+
+			.Grid-cell.u-full {
+			  flex: 0 0 100%;
+			}
+
+			.Grid-cell.u-1of2 {
+			  flex: 0 0 50%;
+			}
+
+			.Grid-cell.u-1of3 {
+			  flex: 0 0 33.3333%;
+			}
+
+			.Grid-cell.u-1of4 {
+			  flex: 0 0 25%;
+			}
+
+	/*这里尝试下拉菜单*/
+	ul.nav,ul.nav ul{
+		padding:0px;
+		margin:0px;
+		list-style-type:none;
+		width:1000px;
+		/*background-color: #8bd400;*/
+		background-color: #0a0a0a;
+		background-color: rgba(0, 0, 0, 0.8);
+		float:left;
+		    /*min-width: 1024px;*/
+ 
+	}
+ 
+	ul.nav li{
+		float: left;/*当元素浮动 将不再占据文档流中的任何位置 父列表实际上没有内容 就会收缩 从而隐藏列表背景*/
+		/*width:80px;*/
+		/*border:1px solid #fff;*/
+		    font-size: 1em;
+		    font-family: inherit;
+		    background-color: #0a0a0a;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+	ul.nav li, ul.nav li:hover ul {
+	/*font-size: 14px;*/
+	 font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-align: inherit;
+	font-size: 1em;
+    line-height: 3.14286;
+    font-weight: 400;
+    letter-spacing: -.01em;
+   
+    color: #f5f5f7;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0 10px;
+    height: 44px;
+    opacity: .8;
+    background: no-repeat;
+    text-decoration: none;
+    box-sizing: content-box;
+    font-style: normal;
+    white-space: nowrap;
+    -webkit-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+	}
+ 
+	ul.nav a{
+		display:block;
+		padding:0 10px;/*每个按钮的宽度由锚文本的尺寸决定 所以不设置显示的宽度 而是在每个锚链接的左右设置一定的内边距*/
+		line-height: 2.2;
+		text-decoration:none;
+		color:#fff;
+		
+	}
+ 
+	ul.nav a:hover, ul.nav a:focus{
+		color:#333;
+	}
+	ul.nav li ul{
+		width:100px;
+		position:absolute;
+		display: none;
+		margin-top:2px;
+ 
+	}
+	ul.nav li:hover ul{
+		display:block;
+	}
+
+	</style>
+</head>
+<body>
+	<!-- <nav class="Grid">
+	  <div class="Grid-cell">...</div>
+	  <div class="Grid-cell">...</div>  网格布局
+	  <div class="Grid-cell">...</div>
+
+			  .Grid {
+		  display: flex;
+		}
+
+		.Grid-cell {
+		  flex: 1;
+		}
+			</nav> -->
+
+
+	
+		
+<!-- <body class="HolyGrail">
+  <header>这里是头部</header>
+  <div class="HolyGrail-body">
+    <main class="HolyGrail-content">主栏
+		<div class="item">这些要放值导航内容</div>
+		<div class="item1">123</div>
+		<div class="item1">fg</div>
+		<div class="item">dgs</div>
+		<div class="item1"> zfv="item"</div>
+		<div class="item">这些要放值导航内容</div>
+		<div class="item1"> sef="item"</div>
+		<div class="item">xvbg</div>
+		<div class="item1">fxgdhtfx</div>
+    </main>
+    <nav class="HolyGrail-nav">这里是导航
+		<div class="item">这些要放值导航内容</div>
+		<div class="item1">123</div>
+		<div class="item1">fg</div>
+		<div class="item">dgs</div>
+		<div class="item1"> zfv="item"</div>
+		<div class="item">这些要放值导航内容</div>
+		<div class="item1"> sef="item"</div>
+		<div class="item">xvbg</div>
+		<div class="item1">fxgdhtfx</div>
+    </nav>
+    <aside class="HolyGrail-ads">副栏
+		<div class="item">这些要放值导航内容</div>
+		<div class="item1">123</div>
+		<div class="item1">fg</div>
+		<div class="item">dgs</div>
+		<div class="item1"> zfv="item"</div>
+		<div class="item">这些要放值导航内容</div>
+		<div class="item1"> sef="item"</div>
+		<div class="item">xvbg</div>
+		<div class="item1">fxgdhtfx</div>
+    </aside>
+  </div>
+  <footer>这里是尾部</footer>
+
+ -->
+
+
+<!-- 这里能实现自适应，但是不能改变大小 -->
+<!-- <nav class="Grid">
+	<ul class="Grid-cell">
+		<li class="item">Home</li>
+		<li class="item">Project</li>
+		<li class="item">Lab</li>
+		<li class="item">Parts</li>
+		<li class="item">Modeling</li>
+		<li class="item">Hardware</li>
+		<li class="item">Team</li>
+		<li class="item">Human Practice</li>
+		<li class="item">Judging</li>
+		
+	</ul> -->
+  
+<!-- </nav> -->
+
+<!-- 这里尝试下拉菜单 -->
+<div>
+<ul class="nav">
+	<li class="first"><a href="#">Home</a></li>
+	<li><a href="#">Project</a>
+		<ul>
+			<li><a href="#">Background</li>
+			<li><a href="#">Description</li>
+			<li><a href="#">Design</li>
+		</ul>
+	</li>
+	<li><a href="#">Lab</a>
+		<ul>
+			<li><a href="#">Experiment</li>
+			<li><a href="#">Protocols</li>
+			<li><a href="#">Results</li>
+			<li><a href="#">Notebook</li>
+			<li><a href="#">Safety</li>
+		</ul>
+	</li>
+	<li><a href="#">Parts </a>
+		<ul>
+			<li><a href="#">Basic</li>
+			<li><a href="#">Composite</li>
+			<li><a href="#">Improvement</li>
+		</ul>
+	</li>
+	<li><a href="#">Modeling</a></li>
+	<li><a href="#">Hardware</a></li>
+	<li><a href="#">Team</a>
+		<ul>
+			<li><a href="#">Member</li>
+			<li><a href="#">Attribution</li>
+			<li><a href="#">Collaboration</li>
+		</ul>
+	</li>
+	<li><a href="#">Human Practice</a></li>
+	<li><a href="#">Judging</a></li>
+	
+</ul>
+</div>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- <script src="homenav.js"></script> -->
+
+	
+<!-- </body> -->
+</html>
