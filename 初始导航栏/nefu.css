@@ -11,7 +11,7 @@
     width: 100%;
     z-index:300;
     top:0px;
-    height: 70px;
+    height: 50px;
 }
 /* 首级菜单栏 */
 
@@ -21,7 +21,7 @@
     width: 80%;
     position: absolute;
     left: 18%;
-    top: 20px;
+    top: 10px;
     margin: 0px 0px 0px 0px!important;
 }
 
@@ -39,8 +39,9 @@
 #nav .mainlevel {
     float:left; 
     border-right:5px;
+    padding-bottom: 30px;
 }
-#nav .mainlevel #home,
+/* #nav .mainlevel #home,
 #nav .mainlevel #project,
 #nav .mainlevel #lab,
 #nav .mainlevel #parts,
@@ -54,6 +55,16 @@
     height: 20px;
     display: block;
     margin: 0 auto;
+} */
+/* 尝试调整图片显示格式（鼠标放上去文字消失，图片显示） */
+#nav .mainlevel .nav-img{
+    width:30px; 
+    height: 30px;
+    /* display: block; */
+    /* margin: 0 auto; */
+    z-index: 1000;
+    position: absolute;
+    /* top: 10px; */
 }
 
 /* 这里padding调整的是所有后代 */
@@ -103,6 +114,8 @@
 
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     /* background: transparent; */
     overflow: hidden;
     width: 200px;
@@ -149,17 +162,53 @@
     float: none;
     margin-top: 0.2cm;
 }
+/* 
 
+*/
+
+#menu > li > ul > li span{
+    visibility: visible;
+    display: block;
+    margin: ;
+} 
+#menu > li > ul > li .nav-img{
+    display: block;
+    visibility: hidden;
+}
+#menu > li > ul > li:hover .nav-img{
+    /* display: none; */
+    visibility: visible;
+    display: block;
+    left:0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    /* margin-bottom: 100px; */
+}
+#menu > li > ul > li:hover span{
+    /* display: none; */
+    visibility: hidden;
+    display: block;
+
+}
 #menu li ul li:hover li{
     display: block;
 }
-
+/* 通过设置一级导航栏的padding-bottom，使其包裹二级菜单，实现在设置二级ul为绝对定位时鼠标能够进入到二级区域 */
 #menu li ul li:hover ul{
+    /* 这里实现 */
+     position: absolute; 
+    top: 43px; 
+    z-index: 2;
+    /*  */
     padding: 10px 0;
     margin-left:0px;
     background-color: rgba(0, 0, 0, 0.8);
     width: 140px;
     opacity: 1;
+    /* top: 40px; */
+    /* margin-top: 100px; */
     visibility: visible;
     box-shadow: 1px 1px 7px rgba(0,0,0,.5);
     animation-duration: 2s;
